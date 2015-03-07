@@ -1,0 +1,20 @@
+\begin{frame}{Governing Equations}
+  \begin{block}{Navier Stokes - immiscible, incompressible fluids}
+    \vspace{-1em}
+    \begin{align*}
+      \pdt{\lrp{\rho\vec u}}
+      +\rho\vec u \cdot \del\vec u + \del p -
+      \deld2\mu\del^s\vec u = \rho\vec f \\
+      \deld \vec u = 0
+    \end{align*}
+  \end{block}
+  \begin{block}{Level set boundary}
+    \begin{align*}
+      \pdt{\phi} + \vec u \cdot \del\phi = 0 \text{ in } \Omega
+    \end{align*}
+  \end{block}
+      \vspace{-0.8em}
+  {\scriptsize (Kees, Akkerman, Farthing, Bazilevs. \emph{A
+      conservative level set method suitable for variable-order
+      approximations and unstructured meshes}. 2011)}
+\end{frame}
