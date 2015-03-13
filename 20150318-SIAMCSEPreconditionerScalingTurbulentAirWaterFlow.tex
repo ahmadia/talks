@@ -106,7 +106,62 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 \input{slides/FieldSplit.tex}
 \input{slides/Stokes/OptionsTour.tex}
 
+\begin{frame}{Existing Approach (Proteus ASM)}
+  \begin{itemize}
+  \item[] \code{-ksp\_type gmres}
+  \item[] \code{-ksp\_gmres\_modifiedgramschmidt}
+  \item[] \code{-ksp\_gmres\_restart 300}
+  \item[] \code{-ksp\_knoll}
+  \item[] \code{-pc\_type asm}
+  \item[] \code{-pc\_asm\_type basic}
+  \item[] \code{-sub\_ksp\_type preonly}
+  \item[] \code{-sub\_pc\_factor\_mat\_solver\_package superlu}
+  \item[] \code{-sub\_pc\_type lu}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fieldsplit Approach}
+  \begin{itemize}
+  \item[] \code{-ksp\_type fgmres}
+  \item[] \code{-pc\_type fieldsplit} 
+  \item[] \code{-pc\_fieldsplit\_schur\_precondition selfp}
+  \item[] \code{-pc\_fieldsplit\_type schur}
+  \item[] \code{-pc\_fieldsplit\_schur\_fact\_type upper}
+  \item[] \code{-pc\_fieldsplit\_block\_size 3}
+  \item[] \code{-pc\_fieldsplit\_0\_fields 1,2}
+  \item[] \code{-pc\_fieldsplit\_1\_fields 0}
+  \item[] \code{-fieldsplit\_0\_ksp\_type preonly}
+  \item[] \code{-fieldsplit\_0\_pc\_type gamg}
+  \item[] \code{-fieldsplit\_1\_ksp\_type gmres}
+  \item[] \code{-fieldsplit\_1\_pc\_type asm}
+  \item[] \code{-fieldsplit\_1\_pc\_asm\_type basic}
+  \item[] \code{-fieldsplit\_1\_sub\_ksp\_type preonly}
+  \item[] \code{-fieldsplit\_1\_sub\_pc\_factor\_mat\_solver\_package superlu}
+  \item[] \code{-fieldsplit\_1\_sub\_pc\_type lu}
+  \item[] \code{-fieldsplit\_1\_ksp\_max\_it 1}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Plunging Breakers}
+    \includegraphics[width=\textwidth]{figures/plunging_breakers.pdf}
+\end{frame}
+
+\begin{frame}{Plunging Breakers}
+    \includegraphics[width=\textwidth]{figures/plunging_comparison.png}
+\end{frame}
+
+\begin{frame}{MARIN Benchmark}
+    \includegraphics[width=\textwidth]{figures/marin_comparison.png}
+\end{frame}
+
 \begin{frame}{Conclusion}
-  Notes here...
+  \begin{itemize}
+  \item The 2D field-split preconditioner provides a promising improvement over
+    our current approach
+  \item The 3D field-split preconditioner provides a reasonable
+    alternative to our current approach
+  \item Our primary focus remains on robustness and reliability
+  \end{itemize}
 \end{frame}
 \end{document}
