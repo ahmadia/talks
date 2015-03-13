@@ -2,17 +2,14 @@
 \documentclass{beamer}
 
 \mode<presentation>
+\usefonttheme{structurebold}
+\mode<presentation>
 {
   \usetheme{default}
-  \usefonttheme[onlymath]{serif}
-  % \usetheme{Singapore}
-  % \usetheme{Warsaw}
-  % \usetheme{Malmoe}
-  % \useinnertheme{circles}
-  % \useoutertheme{infolines}
-  % \useinnertheme{rounded}
+   \setbeamercolor{structure}{fg=black!70}
+  \setbeamercovered{invisible}
+  \setbeamerfont{title}{size=\large}
 
-  \setbeamercovered{transparent=100}
 }
 
 \usepackage[english]{babel}
@@ -66,6 +63,8 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 
 % \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
 % \logo{\pgfuseimage{university-logo}}
+\pgfdeclareimage[height=0.5cm]{corps_logo}{./logos/corps_logo.pdf}
+\logo{\pgfuseimage{corps_logo}}
 
 
 
@@ -93,6 +92,10 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 % \beamerdefaultoverlayspecification{<+->}
 
 \begin{document}
+\def\Tiny{\fontsize{4pt}{4pt}\selectfont}
+\defbeamertemplate{footline}{dist}{{\Tiny DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited.}}
+\setbeamertemplate{footline}[dist]{}
+
 \lstset{language=C}
 \normalem
 
@@ -104,7 +107,6 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 \input{slides/TwoPhaseNavierStokesLES/Model.tex}
 \input{slides/TwoPhaseNavierStokesLES/Coupling.tex}
 \input{slides/FieldSplit.tex}
-\input{slides/Stokes/OptionsTour.tex}
 
 \begin{frame}{Existing Approach (Proteus ASM)}
   \begin{itemize}

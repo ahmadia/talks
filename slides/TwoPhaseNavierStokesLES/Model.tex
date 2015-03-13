@@ -2,15 +2,15 @@
   \begin{block}{Navier Stokes - immiscible, incompressible fluids}
     \vspace{-1em}
     \begin{align*}
-      \pdt{\lrp{\rho\vec u}}
-      +\rho\vec u \cdot \del\vec u + \del p -
-      \deld2\mu\del^s\vec u = \rho\vec f \\
+      \pdt{\lrp{\vec u}}
+      +\del\cdot\vec u \times \vec u + \del \frac{p(\theta)}{\rho(\theta)} -
+      \deld2\mu\del^s\vec u = \vec f \\
       \deld \vec u = 0
     \end{align*}
   \end{block}
-  \begin{block}{Level set boundary}
+  \begin{block}{Volume Fraction}
     \begin{align*}
-      \pdt{\phi} + \vec u \cdot \del\phi = 0 \text{ in } \Omega
+      \theta_t + \nabla \cdot (\theta  u) = 0
     \end{align*}
   \end{block}
       \vspace{-0.8em}
