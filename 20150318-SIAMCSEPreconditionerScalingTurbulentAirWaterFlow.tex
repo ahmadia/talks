@@ -135,6 +135,7 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
   \item[] \code{-fieldsplit\_0\_ksp\_type preonly}
   \item[] \code{-fieldsplit\_0\_pc\_type gamg}
   \item[] \code{-fieldsplit\_1\_ksp\_type gmres}
+  \item[] \code{-fieldsplit\_1\_ksp\_gmres\_modifiedgramschmidt}
   \item[] \code{-fieldsplit\_1\_pc\_type asm}
   \item[] \code{-fieldsplit\_1\_pc\_asm\_type basic}
   \item[] \code{-fieldsplit\_1\_sub\_ksp\_type preonly}
@@ -167,10 +168,8 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 
 \begin{frame}{Conclusion}
   \begin{itemize}
-  \item The 2D field-split preconditioner provides a promising improvement over
-    our current approach
-  \item The 3D field-split preconditioner provides a reasonable
-    alternative to our current approach
+  \item The field-split preconditioner provides a promising improvement
+    over our current approach
   \item Our primary focus remains on robustness and reliability
   \end{itemize}
 \end{frame}
