@@ -1,0 +1,29 @@
+\begin{frame}[shrink]{Schur Complement Preconditioners}
+  \begin{equation*}
+    \begin{bmatrix}
+      A & B \\ C & D
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\ y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      f \\ g
+    \end{bmatrix}
+  \end{equation*}
+  \begin{block}{Full}
+    \begin{align*}
+      S_p = D - C A^{-1} B
+    \end{align*}
+  \end{block}
+\begin{block}{SIMPLE-type (selfp)}
+  \begin{align*}
+      S_p =  D - C\ \text{diag}\left(A\right)^{-1} B
+    \end{align*}
+  \end{block}
+  \begin{block}{Single Block (A11)}
+    \begin{align*}
+      S_p = D 
+    \end{align*}
+  \end{block}
+\end{frame}

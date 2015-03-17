@@ -107,6 +107,7 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 \input{slides/TwoPhaseNavierStokesLES/Model.tex}
 \input{slides/TwoPhaseNavierStokesLES/Coupling.tex}
 \input{slides/FieldSplit.tex}
+\input{slides/SchurPrecondition.tex}
 
 \begin{frame}{Existing Approach (Proteus ASM)}
   \begin{itemize}
@@ -168,9 +169,12 @@ Aron J. Ahmadia\inst{1}, Jed Brown\inst{2}, Matthew Farthing \inst{1} Barry Smit
 
 \begin{frame}{Conclusion}
   \begin{itemize}
-  \item The field-split preconditioner provides a promising improvement
-    over our current approach
-  \item Our primary focus remains on robustness and reliability
+  \item Although the field-split preconditioner requires fewer Krylov
+    iterations per solve, the iterations are more expensive
+  \item With our current linear system tolerances, the field-split
+    preconditioner is only slightly better on the presented problem suite
+  \item Looser tolerances could result in performance speedups, but
+    this needs to be tested in the application
   \end{itemize}
 \end{frame}
 \end{document}

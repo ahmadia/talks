@@ -3,14 +3,20 @@
     \vspace{-1em}
     \begin{align*}
       \pdt{\lrp{\vec u}}
-      +\del\cdot\vec u \times \vec u + \del \frac{p(\theta)}{\rho(\theta)} -
-      \deld2\mu\del^s\vec u = \vec f \\
+      +\del\cdot\vec u \times \vec u + \del \frac{p}{\rho(\theta)} -
+      \deld2\mu(\theta) \del^s\vec u = \vec f \\
       \deld \vec u = 0
     \end{align*}
   \end{block}
   \begin{block}{Volume Fraction}
     \begin{align*}
       \theta_t + \nabla \cdot (\theta  u) = 0
+    \end{align*}
+  \end{block}
+  \begin{block}{Constitutive Relationship}
+    \begin{align*}
+      \rho = \rho_w\theta + \rho_a[1 - \theta] \\
+      \mu = \mu_w\theta + \mu_a[1 - \theta]
     \end{align*}
   \end{block}
       \vspace{-0.8em}
