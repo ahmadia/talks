@@ -2,9 +2,9 @@
   \begin{block}{Navier Stokes - immiscible, incompressible fluids}
     \vspace{-1em}
     \begin{align*}
-      \pdt{\lrp{\vec u}}
-      +\del\cdot\vec u \times \vec u + \del \frac{p}{\rho(\theta)} -
-      \deld2\mu(\theta) \del^s\vec u = \vec f \\
+      \pdt{\vec u}
+      +\del \cdot \left[ \vec u \otimes \vec u -
+      \nu(\theta) \del^s\vec u \right]+ \frac{\del p}{\rho(\theta)}  = \vec f \\
       \deld \vec u = 0
     \end{align*}
   \end{block}
@@ -16,7 +16,7 @@
   \begin{block}{Constitutive Relationship}
     \begin{align*}
       \rho = \rho_w\theta + \rho_a[1 - \theta] \\
-      \mu = \mu_w\theta + \mu_a[1 - \theta]
+      \nu = \nu_w\theta + \nu_a[1 - \theta]
     \end{align*}
   \end{block}
       \vspace{-0.8em}
