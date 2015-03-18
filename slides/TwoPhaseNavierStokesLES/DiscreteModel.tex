@@ -1,0 +1,27 @@
+\begin{frame} 
+\frametitle{Stabilized Weak Formulation}
+\begin{eqnarray}
+  F^u(\vec u, p) &=& \int_{\Omega} \left( D_t \vec u^h + \frac{\nabla p^h}{\rho} \right) \cdot \vec w^h dV  \nonumber \\
+&& +  \int_{\Omega} \left( -\vec u^h \otimes \vec u^h + \nu \nabla^s \vec u^h   \right) : \nabla \vec w^h dV  \nonumber \\
+&&+\int_{\Omega} \nu_n \nabla^s \vec u^h : \nabla \vec w^h dV \nonumber \\
+&&+\int_{\Omega} \vec u' \cdot \mathcal{L}^{*}_{v,v} \vec w^h dV \nonumber \\
+&&+\int_{\Omega} p' \mathcal{L}^{*}_{p,v} \vec w^h dV \label{eq:weakmomtdMS}\\
+&=& 0  \quad \forall \vec w^h_v \in  W^h_v(\Omega)  \nonumber  \\
+F^p(\vec u,p) &=& -\int_{\Omega} \vec u^h \cdot \nabla \vec w_p^h dV + \int_{\Omega} \vec u' \cdot \mathcal{L}^*_{v,p} w_p^h \\
+&=& 0 \quad \forall w_p^h \in W_p^h(\Omega) \nonumber  
+\end{eqnarray}  
+$^*$assuming Dirichlet conditions everywhere for simplicity
+\end{frame}
+\begin{frame}
+\frametitle{Stabilized Weak Formulation, Cont'd}
+\begin{eqnarray}
+\mathcal{L}^*_{v,v} \vec w^h_v &=&  - \vec u^{h,*} \cdot \nabla \vec w^h_v  + \nu \Delta \vec w^h \\
+\mathcal{L}^*_{p,v} \vec w^h_v &=& \frac{1}{\rho} \nabla \cdot \vec w^h \\
+\mathcal{L}^*_{v,p} w^h_p &=& -\nabla \vec w^h_p \\
+\vec u' &=& - \tau_v \left( D_t \vec u^h + \frac{\nabla p^h}{\rho}  +   \vec u^{h,*} \cdot \nabla \vec u^h - \nu \Delta \vec u^h  \right) \\
+p' &=& -\tau_p \nabla \cdot v^h\\
+\tau_v &=& \frac{1}{\frac{4 \nu}{h^2} + \frac{2 \rho \|\vec u^h\| }{h} + |D_t^{'}|} \\
+\tau_p &=& 1/\tau_v
+\end{eqnarray}
+Note: $u'$ depends on $\nabla p$, so $\frac{\partial F^p}{\partial p}$ is the weak form of the pressure Laplacian 
+\end{frame}
